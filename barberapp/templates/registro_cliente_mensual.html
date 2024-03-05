@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Cliente Mensual</title>
+    <style>
+        /* Estilos CSS para el formulario de registro de clientes mensuales */
+        body{
+            background: linear-gradient(to bottom, #434445, #cacdcd);
+        }
+        .registro-cliente-mensual {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff; /* Color de fondo del formulario */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilos para las etiquetas (labels) */
+        .registro-cliente-mensual label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold; /* Texto en negrita */
+        }
+
+        /* Estilos para los campos de entrada (inputs) y selección (select) */
+        .registro-cliente-mensual input,
+        .registro-cliente-mensual select {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc; /* Borde del campo de entrada */
+            border-radius: 3px;
+        }
+
+        /* Estilos para el botón de registro */
+        .registro-cliente-mensual button {
+            background-color: #007BFF; /* Color de fondo del botón */
+            color: white; /* Color del texto del botón */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold; /* Texto en negrita */
+        }
+
+        .registro-cliente-mensual button:hover {
+            background-color: #0056b3; /* Cambia el color de fondo al pasar el ratón */
+        }
+        button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF; /* Color de fondo del botón */
+            color: white; /* Color del texto del botón */
+            text-decoration: none; /* Quita subrayado del enlace */
+            border-radius: 5px; /* Bordes redondeados */
+            font-weight: bold; /* Texto en negrita */
+            transition: background-color 0.3s ease; /* Efecto de transición */
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Cambia el color de fondo al pasar el ratón */
+        }
+                
+    </style>
+</head>
+<body>
+    <button type="button" onclick="window.location.href='/';">Volver al Índice</button>
+
+    <div class="registro-cliente-mensual">
+        <h2>Registro de Cliente Mensual</h2>
+        <form method="POST" action="/registrar_cliente_mensual">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" required>
+            
+            <label for="mes_pago">Mes de Pago:</label>
+            <input type="text" name="mes_pago" id="mes_pago" required>
+           
+            <label for="monto">Monto:</label>
+            <input type="text" name="monto" id="monto" required>
+            
+            
+            <button type="submit">Registrar Cliente Mensual</button>
+        </form>
+        
+        <table class="registro-cliente-mensual">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Fecha de Pago</th>
+                    <th>Monto</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cliente in clientes %}
+                    <tr>
+                        <td>{{ cliente[0] }}</td>
+                        <td>{{ cliente[1] }}</td>
+                        <td>{{ cliente[2] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Servicios por Semana</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Servicios por Semana</h1>
+        <p>Semana Actual: {{ nombre_semana }}</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Semana</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for semana, total in totales_semana %}s
+                    <tr>
+                        <td>{{ semana }}</td>
+                        <td>{{ total }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

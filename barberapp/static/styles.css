@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #434445, #cacdcd); /* Degradado de azul a verde agua */
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #dbdfe0; /* Azul neon */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: rgb(27, 27, 27); /* Texto en blanco */
+}
+
+select, input {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #696767;
+    border-radius: 3px;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    text-decoration: none; /* Quita subrayado del enlace */
+    border-radius: 5px; /* Bordes redondeados */
+    font-weight: bold; /* Texto en negrita */
+    transition: background-color 0.3s ease; /* Efecto de transición */
+}
+
+button:hover {
+    background-color: #0056b3; /* Cambia el color de fondo al pasar el ratón */
+}
+
+/* Estilos para la tabla */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+/* Estilos para las celdas de encabezado */
+.table th {
+    background-color: #0044ff; /* Azul neon oscuro */
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #090909;
+    color: white;
+}
+
+/* Estilos para las celdas de datos */
+.table td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #090909;
+}
+
+/* Estilos para las filas impares (opcional) */
+.table tbody tr:nth-child(odd) {
+    background-color: #0a0e26; /* Azul oscuro */
+    color: white;
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    text-decoration: none; /* Quita subrayado del enlace */
+    border-radius: 5px; /* Bordes redondeados */
+    font-weight: bold; /* Texto en negrita */
+    transition: background-color 0.3s ease; /* Efecto de transición */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Cambia el color de fondo al pasar el ratón */
+}
+

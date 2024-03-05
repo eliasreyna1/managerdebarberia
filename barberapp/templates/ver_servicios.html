@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Servicios Registrados</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Servicios Registrados para el Día de la Semana: {{ nombre_dia_semana }}</h1>
+        <div class="table-responsive">
+            {{ servicios_html | safe }}
+        </div>
+        <a href="/sumar_servicios" class="btn btn-primary mt-3">Sumar Ingresos al Final del Día</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Barbershop App</title>
+</head>
+<body>
+    <!-- Enlace para ver la suma de servicios por mes -->
+    <a href="{{ url_for('sumar_servicios_por_mes', mes='2023-09') }}"class="button">Ver Suma de Servicios</a>
+
+
+    <!-- Agrega este código en el archivo index.html -->
+    <a href="{{ url_for('registrar_cliente_mensual') }}" class="button">Registrar Cliente Mensual</a>
+
+
+
+    <form action='/registrar_servicio' method="POST">
+        <label for="servicio">Tipo de Servicio:</label>
+        <select name="servicio" id="servicio">
+            <option value="corte">Corte</option>
+            <option value="afeitado">Afeitado</option>
+            <option value="barba">Corte Mas Barba</option>
+        </select>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" name="fecha" id="fecha">
+
+        <label for="monto">Monto:</label>
+        <input type="number" name="monto" id="monto" step="0.01">
+
+        <button type="submit">Registrar Servicio</button>
+    </form>
+
+    <form action="/ver_servicios" method="POST">
+        <label for="fecha">Seleccione una Fecha:</label>
+        <input type="date" name="fecha" id="fecha">
+
+        <button type="submit">Ver Servicios</button>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tipo</th>
+                <th>Fecha</th>
+                <th>Monto</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for servicio in servicios %}
+                <tr>
+                    <td>{{ servicio[1] }}</td>
+                    <td>{{ servicio[2] }}</td>
+                    <td>{{ servicio[3] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+   
+    <!-- Mostrar el total de servicios por día y por mes -->
+    <div>
+        <h2>Total de Servicios del Día: <span id="totalDia">Cargando...</span></h2>
+        <h2>Total de Servicios del Mes: <span id="totalMes">Cargando...</span></h2>
+    </div>
+
+    <!-- Formulario para seleccionar el mes y ver la suma -->
+ 
+
+    
+    <script src="/static/scripts.js"></script>
+</body>
+</html>

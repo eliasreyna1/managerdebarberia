@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccionar Mes</title>
+</head>
+<body>
+    <h1>Seleccionar Mes</h1>
+    <form action="/sumar_servicios_por_mes" method="GET">
+        <label for="mes">Selecciona un mes:</label>
+        <select name="mes" id="mes">
+            {% for mes in meses %}
+                <option value="{{ mes }}">{{ mes }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Sumar Servicios</button>
+    </form>
+</body>
+</html>
